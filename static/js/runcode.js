@@ -2,7 +2,7 @@ $("document").ready(function() {
 
 $("#runit").click(function()	{
 	input = $("#stdin").val();
-	code = $("#program").val();
+	code = editor.getValue()//$("#program").val();
 	pdata = {code: code, input:input};
 	store = $(this).text()
 	that = this;
