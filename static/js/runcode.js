@@ -1,15 +1,18 @@
 $("document").ready(function() {
 
 $("#runit").click(function()	{
+	input = $("#stdin").val();
 	code = $("#program").val();
-	console.log(code);
-	pdata = {code: code};
+	pdata = {code: code, input:input};
+	store = $(this).text()
+	that = this;
+	$(this).text("Running...");
 	$.ajax({type:"post",
 		url:"run",
 		data:pdata,
 		success: function(data) {
-				console.log(data);
 				$("#stdout").val(data.stdout);
+				$(that).text(store);
 			}, 
 		datatype:"json",});
 });
