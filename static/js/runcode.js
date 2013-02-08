@@ -11,7 +11,7 @@ $("#runit").click(function()	{
 		url:"run",
 		data:pdata,
 		success: function(data) {
-				$("#stdout").val(data.stdout);
+				stdout.setValue(data.stdout);//$("#stdout").val(data.stdout);
 				$(that).text(store);
 			}, 
 		datatype:"json",});

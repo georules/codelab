@@ -63,6 +63,10 @@
 		{indentUnit:2,matchBrackets:true,lineNumbers:'true',theme:'solarized light',
 			mode:	{name:'python',version:2,singleLineStringErrors:false}
 		});
+	var stdout = CodeMirror.fromTextArea(document.getElementById('stdout'),
+		{indentUnit:2,lineNumbers:'true',theme:'solarized light'});
+	var stdin = CodeMirror.fromTextArea(document.getElementById('stdin'),
+		{indentUnit:2,lineNumbers:'true',theme:'solarized light'});
 	</script>
 
     <script src="/static/js/bootstrap-transition.js"></script>
