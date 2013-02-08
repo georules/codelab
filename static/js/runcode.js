@@ -1,7 +1,7 @@
 $("document").ready(function() {
 
 $("#runit").click(function()	{
-	input = $("#stdin").val();
+	input = stdin.getValue()//$("#stdin").val();
 	code = editor.getValue()//$("#program").val();
 	pdata = {code: code, input:input};
 	store = $(this).text()
@@ -11,7 +11,8 @@ $("#runit").click(function()	{
 		url:"run",
 		data:pdata,
 		success: function(data) {
-				stdout.setValue(data.stdout);//$("#stdout").val(data.stdout);
+				o = data.stdout + data.stderr;
+				stdout.setValue(o);//$("#stdout").val(data.stdout);
 				$(that).text(store);
 			}, 
 		datatype:"json",});
