@@ -1,0 +1,4 @@
+module.exports = {
+	port:9000,
+	exeserver: "http://ec2-72-44-42-170.compute-1.amazonaws.com:8080/",
+};
