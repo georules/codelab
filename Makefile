@@ -1,5 +1,5 @@
-NODE_PATH ?= ./node_modules
-HANDLEBARS_COMPILER = $(NODE_PATH)/handlebars/bin/handlebars
+NODE_PATHY = ./node_modules
+HANDLEBARS_COMPILER = $(NODE_PATHY)/handlebars/bin/handlebars
 run: \
 	all
 	sudo node server.js

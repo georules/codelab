@@ -46,7 +46,54 @@
 		</div>
 		<div class="span4 codediv fill">
 			<h2>Program</h2>
-			<textarea class="code" id="program"></textarea>
+			<textarea class="code" id="program">def issorted(a):
+  if len(a) < 2:
+    return True
+  i=0
+  x1 = a[i]
+  for x2 in a[1:]:
+    if x1 <= x2:
+      i = i + 1
+      x1=a[i]
+    else:
+      return False
+  return True
+
+def merge(a,b):
+  result = []
+  i,j=0,0
+  while i<len(a) and j<len(b):
+    if a[i] <= b[j]:
+      result.append(a[i])
+      i+=1
+    else:
+      result.append(b[j])
+      j+=1
+  result += a[i:]
+  result += b[j:]
+  return result
+
+def mergesort(a):
+  if len(a) < 2:
+    return a
+  mid = int(len(a) / 2)
+  A = mergesort(a[:mid])
+  B = mergesort(a[mid:])
+  return merge(A,B)
+
+import sys
+data=[]
+for x in sys.stdin.readlines():
+  data.append(int(x))
+
+print data
+print issorted(data)
+
+data2 = mergesort(data)  
+
+print data2
+print issorted(data2)
+</textarea>
 			<button class="btn btn-primary" id="runit">Run It &hearts;</button>
 		</div>
 		<div class="span4 codediv fill">
